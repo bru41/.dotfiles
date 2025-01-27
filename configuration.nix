@@ -1,51 +1,49 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  git
-  wget
-  firefox
-  lynx
-  kitty
-  heroic
-  thunderbird
-  discord
-  mangohud
-  vscode
-  brave
-  caligula
-  numlockx
-  kitty
-  gcc
-  gnumake
-  ncurses
-  gparted
-  smartmontools
-  python39
-
-
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    git
+    wget
+    firefox
+    lynx
+    kitty
+    heroic
+    thunderbird
+    discord
+    mangohud
+    vscode
+    brave
+    caligula
+    numlockx
+    kitty
+    gcc
+    gnumake
+    ncurses
+    gparted
+    smartmontools
+    python39
+    rustup
+    alejandra
   ];
 
-programs.nix-ld.enable = true;
-programs.nix-ld.libraries = with pkgs;[
-  
-  libGL
-  alsa-lib  
-
-];
-
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libGL
+    alsa-lib
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -89,27 +87,21 @@ programs.nix-ld.libraries = with pkgs;[
   users.users.nickv = {
     isNormalUser = true;
     description = "Nick Valkenburg";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-
-
-
-
-
- # hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages;[ oxygen];
-  services.displayManager.sddm.autoNumlock = true; 
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [oxygen];
+  services.displayManager.sddm.autoNumlock = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -137,21 +129,18 @@ programs.nix-ld.libraries = with pkgs;[
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
-
-boot.kernelPackages = pkgs.linuxPackages; # (this is the default) some amdgpu issues on 6.10
-programs = {
-  gamescope = {
-    enable = true;
-    capSysNice = true;
+  boot.kernelPackages = pkgs.linuxPackages; # (this is the default) some amdgpu issues on 6.10
+  programs = {
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    };
   };
-  steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-};
-};
-
-
 }
