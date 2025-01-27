@@ -32,10 +32,14 @@ sudo nixos-rebuild switch --flake .#nixos-test &>nixos-switch.log || (cat nixos-
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
 
-nix flake lock --update-input nixpkgs
+nix flake update
 
 git add ~/.dotfiles/flake.lock
 git add ~/.dotfiles/configuration.nix
+git add ~/.dotfiles/flake.nix
+git add ~/.dotfiles/hardware-configuration.nix
+git add ~/.dotfiles/build.sh
+
 
 # Commit all changes witih the generation metadata
 
