@@ -37,6 +37,8 @@
     python39
     rustup
     alejandra
+    obsidian
+    neovim
   ];
   #################
   #SYSTEM PACKAGES#

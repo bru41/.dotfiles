@@ -30,6 +30,9 @@ echo "NixOS Rebuilding..."
 # Rebuild, output simplified errors, log trackebacks
 sudo nixos-rebuild switch --flake .#nixos-test &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1);#
 # Get current generation metadata
+
+echo "NixOS Rebuilt OK!"
+
 current=$(nixos-rebuild list-generations | grep current)
 
 nix flake update
@@ -45,9 +48,8 @@ git add ~/.dotfiles/build.sh
 
 git commit -am "$current"
 
+git push
 # Back to where you were
 popd
 
 # Notify all OK!
-
-notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
