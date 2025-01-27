@@ -31,10 +31,19 @@ echo "NixOS Rebuilding..."
 sudo nixos-rebuild switch --flake .#nixos-test &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1);#
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
+
+nix flake lock --update-input nixpkgs
+
+git add ~/.dotfiles/flake.lock
 git add ~/.dotfiles/configuration.nix
+
 # Commit all changes witih the generation metadata
+
 git commit -am "$current"
+
 # Back to where you were
 popd
+
 # Notify all OK!
+
 notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
