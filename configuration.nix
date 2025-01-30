@@ -44,6 +44,7 @@
     cargo-ui
     nerdfetch
     zip
+    unzip
   ];
   #################
   #SYSTEM PACKAGES#
