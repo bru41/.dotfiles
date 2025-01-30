@@ -45,6 +45,7 @@
     nerdfetch
     zip
     unzip
+    nodejs_23
   ];
   #################
   #SYSTEM PACKAGES#
