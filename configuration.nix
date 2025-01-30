@@ -39,6 +39,9 @@
     alejandra
     obsidian
     neovim
+    cargo
+    rustup
+    cargo-ui
   ];
   #################
   #SYSTEM PACKAGES#
