@@ -43,6 +43,7 @@
     rustup
     cargo-ui
     nerdfetch
+    zip
   ];
   #################
   #SYSTEM PACKAGES#
