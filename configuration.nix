@@ -46,6 +46,8 @@
     zip
     unzip
     nodejs_23
+
+    vimPlugins.rustaceanvim
   ];
   #################
   #SYSTEM PACKAGES#
