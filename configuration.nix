@@ -62,7 +62,7 @@
   boot.loader.systemd-boot.enable = true;
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.theme = "${pkg.nixos-grub2-theme}";
+  boot.loader.grub.theme = "${pkgs.nixos-grub2-theme}";
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
