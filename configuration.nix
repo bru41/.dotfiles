@@ -46,7 +46,7 @@
     zip
     unzip
     nodejs_23
-
+    runit
     vimPlugins.rustaceanvim
   ];
   #################
@@ -59,7 +59,8 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
