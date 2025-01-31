@@ -46,8 +46,8 @@
     zip
     unzip
     nodejs_23
-    runit
     vimPlugins.rustaceanvim
+    nixos-grub2-theme
   ];
   #################
   #SYSTEM PACKAGES#
@@ -59,9 +59,10 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = false;
+  boot.loader.systemd-boot.enable = true;
 
   boot.loader.efi.canTouchEfiVariables = true;
+boot.loader.grub.theme = "${nixos-grub2-theme}"
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
