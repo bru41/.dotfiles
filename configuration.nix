@@ -48,6 +48,7 @@
     nodejs_23
     vimPlugins.rustaceanvim
     nixos-grub2-theme
+    minicom
   ];
   #################
   #SYSTEM PACKAGES#
