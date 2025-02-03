@@ -49,6 +49,7 @@
     vimPlugins.rustaceanvim
     nixos-grub2-theme
     minicom
+    htop
   ];
   #################
   #SYSTEM PACKAGES#
