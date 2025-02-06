@@ -21,6 +21,7 @@
         system = "x86_64-linux";
         specialArgs = {
           unstable = import unstablepkgs {
+            currentSystem = system;
             config.allowUnfree = true;
           };
         };
