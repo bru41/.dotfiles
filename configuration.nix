@@ -150,7 +150,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   # Did you read the comment?
-  currentSystem = ""
   boot.kernelPackages = pkgs.linuxPackages_latest;
   programs = {
     gamescope = {

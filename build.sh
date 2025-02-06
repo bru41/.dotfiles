@@ -20,6 +20,7 @@ if git diff --quiet '*.nix'; then
     popd
     exit 0
 fi
+failed = 0;
 # Autoformat your nix files
 alejandra . &>/dev/null \  || ( alejandra . ; echo "formatting failed!" && exit 1)
 
@@ -28,7 +29,7 @@ alejandra . &>/dev/null \  || ( alejandra . ; echo "formatting failed!" && exit 
 git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake .#nixos-test &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1);#
+sudo nixos-rebuild switch --flake .#nixos-test &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 # Get current generation metadata
 
 echo "NixOS Rebuilt OK!"
