@@ -2,34 +2,30 @@
   description = "The first falke";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    unstablepkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
   };
 
   outputs = {
     self,
     nixpkgs,
-    unstablepkgs,
+    nixpkgs-stable,
+    nixpkgs-unstable,
     ...
   }: let
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.pkgs;
-    unstable = unstablepkgs.pkgs;
+    lib = nixpkgs-stable.lib;
+    pkgs = nixpkgs-stable.legacyPackages.${system};
+    system = "x86_64-linux";
+    unstable = nixpkgs-unstable.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      nixos-test = lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          unstable = import unstablepkgs {
-            currentSystem = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          nixpkgs = import nixpkgs {
-            currentSystem = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-        };
+      kde-nixOS = lib.nixosSystem {
+        inherit system;
         modules = [./configuration.nix];
+        specialArgs = {
+          inherit unstable;
+          inherit lib;
+        };
       };
     };
     #      hardware.pulseaudio.enable = true;

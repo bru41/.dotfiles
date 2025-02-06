@@ -52,10 +52,10 @@
       nixos-grub2-theme
       minicom
       htop
+      heroic
     ])
     ++ (with unstable; [
-      heroic
-    ]);
+      ]);
   #################
   #SYSTEM PACKAGES#
   #################
@@ -64,12 +64,12 @@
     libGL
     alsa-lib
   ];
-
+  nixpkgs.config.allowUnfree = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.theme = "${pkgs.nixos-grub2-theme}";
+  boot.loader.grub.theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -112,10 +112,6 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # hardware.pulseaudio.enable = true;
@@ -150,7 +146,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   # Did you read the comment?
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
   programs = {
     gamescope = {
       enable = true;
