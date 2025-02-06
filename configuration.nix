@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  unstable,
   ...
 }: {
   imports = [
@@ -20,14 +21,14 @@
     firefox
     lynx
     kitty
-    heroic
+
     thunderbird
     discord
     mangohud
     vscode
     brave
     caligula
-    numlockx
+    neofetch
     kitty
     gcc
     gnumake
@@ -50,6 +51,9 @@
     nixos-grub2-theme
     minicom
     htop
+  ];
+  environment.systemPackages = with unstable; [
+    heroic
   ];
   #################
   #SYSTEM PACKAGES#
