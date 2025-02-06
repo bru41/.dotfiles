@@ -21,9 +21,12 @@
         system = "x86_64-linux";
         specialArgs = {
           unstable = import unstablepkgs {
-            currentSystem = "x86_64-linux";
-            config.allowUnfree = true;
+		 currentSystem = "x86_64-linux";
+		 config.allowUnfree = true;
           };
+  	  nixpkgs = import nixpkgs {
+	    currentSystem = "x86_64-linux";
+		 config.allowUnfree = true;
         };
         modules = [./configuration.nix];
       };
