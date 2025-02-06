@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    unstablepkgs.url = "github:NixOS/nixpkgs/unstable";
+    unstablepkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs = {
