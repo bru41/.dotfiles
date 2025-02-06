@@ -14,47 +14,48 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
-    wget
-    firefox
-    lynx
-    kitty
+  environment.systemPackages =
+    (with pkgs; [
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      git
+      wget
+      firefox
+      lynx
+      kitty
 
-    thunderbird
-    discord
-    mangohud
-    vscode
-    brave
-    caligula
-    neofetch
-    kitty
-    gcc
-    gnumake
-    ncurses
-    gparted
-    smartmontools
-    python39
-    rustup
-    alejandra
-    obsidian
-    neovim
-    cargo
-    rustup
-    cargo-ui
-    nerdfetch
-    zip
-    unzip
-    nodejs_23
-    vimPlugins.rustaceanvim
-    nixos-grub2-theme
-    minicom
-    htop
-  ];
-  environment.systemPackages = with unstable; [
-    heroic
-  ];
+      thunderbird
+      discord
+      mangohud
+      vscode
+      brave
+      caligula
+      neofetch
+      kitty
+      gcc
+      gnumake
+      ncurses
+      gparted
+      smartmontools
+      python39
+      rustup
+      alejandra
+      obsidian
+      neovim
+      cargo
+      rustup
+      cargo-ui
+      nerdfetch
+      zip
+      unzip
+      nodejs_23
+      vimPlugins.rustaceanvim
+      nixos-grub2-theme
+      minicom
+      htop
+    ])
+    ++ (with unstable; [
+      heroic
+    ]);
   #################
   #SYSTEM PACKAGES#
   #################
