@@ -20,12 +20,10 @@
       nixos-test = lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          unstable =
-            import unstablepkgs
-            {
-              inherit system;
-              config.allowUnfree = true;
-            };
+          unstable = import unstablepkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = [./configuration.nix];
       };
