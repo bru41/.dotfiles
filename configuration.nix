@@ -53,6 +53,7 @@
       minicom
       htop
       heroic
+      ollama
     ])
     ++ (with unstable; [
       ]);
