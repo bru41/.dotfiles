@@ -115,6 +115,11 @@
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  programs.gnupg.agent.settings = {
+    default-cache-ttl = 1;
+    max-cache-ttl = 1;
+  };
+
   # hardware.pulseaudio.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
