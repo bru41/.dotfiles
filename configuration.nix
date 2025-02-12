@@ -123,8 +123,13 @@
   # hardware.pulseaudio.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [oxygen];
+  programs.hyprland = {
+    # Install the packages from nixpkgs
+    enable = true;
+    # Whether to enable XWayland
+    xwayland.enable = true;
+  };
+
   services.displayManager.sddm.autoNumlock = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
