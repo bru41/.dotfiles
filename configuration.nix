@@ -68,6 +68,7 @@
       procps
       waybar
       nerdfonts
+      swww
     ])
     ++ (with unstable; [
       ]);
