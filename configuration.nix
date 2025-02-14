@@ -67,6 +67,7 @@
       xfce.thunar
       procps
       waybar
+      nerdfonts
     ])
     ++ (with unstable; [
       ]);
