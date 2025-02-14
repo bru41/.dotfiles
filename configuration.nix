@@ -29,7 +29,6 @@
       vscode
       brave
       caligula
-      neofetch
       kitty
       gcc
       gnumake
@@ -54,6 +53,19 @@
       htop
       heroic
       ollama
+      swaynotificationcenter
+      rofi-wayland
+      fastfetch
+      btop
+      swappy
+      wlogout
+      wallust
+      ags
+      cava
+      papers
+      vlc
+      xfce.thunar
+      procps
     ])
     ++ (with unstable; [
       ]);
@@ -122,7 +134,8 @@
 
   # hardware.pulseaudio.enable = true;
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.autoNumlock = true;
   programs.hyprland = {
     # Install the packages from nixpkgs
     enable = true;
@@ -130,7 +143,6 @@
     xwayland.enable = true;
   };
 
-  services.displayManager.sddm.autoNumlock = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
