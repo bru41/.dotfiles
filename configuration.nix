@@ -66,6 +66,7 @@
       vlc
       xfce.thunar
       procps
+      waybar
     ])
     ++ (with unstable; [
       ]);
