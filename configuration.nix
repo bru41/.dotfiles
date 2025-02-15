@@ -69,6 +69,8 @@
       waybar
       nerdfonts
       swww
+      hyprcursor
+      rose-pine-cursor
     ])
     ++ (with unstable; [
       ]);
