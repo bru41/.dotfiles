@@ -61,12 +61,12 @@
       swappy
       wlogout
       wallust
-      ags
       cava
       papers
       vlc
       xfce.thunar
       procps
+      terminus-nerdfont
       waybar
       nerdfonts
       swww
@@ -74,7 +74,8 @@
       rose-pine-cursor
     ])
     ++ (with unstable; [
-      ]);
+      ags
+    ]);
   #################
   #SYSTEM PACKAGES#
   #################
