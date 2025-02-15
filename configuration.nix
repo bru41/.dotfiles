@@ -67,7 +67,6 @@
       xfce.thunar
       procps
       terminus-nerdfont
-      waybar
       nerdfonts
       swww
       hyprcursor
@@ -75,6 +74,7 @@
     ])
     ++ (with unstable; [
       ags
+      waybar
     ]);
   #################
   #SYSTEM PACKAGES#
@@ -84,6 +84,22 @@
     libGL
     alsa-lib
   ];
+  fonts.packages =
+    (with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
+      nerdfonts
+      font-awesome
+    ])
+    ++ (with unstable; [
+      ]);
   nixpkgs.config.allowUnfree = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
