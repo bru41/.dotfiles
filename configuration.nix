@@ -73,6 +73,8 @@
       rose-pine-cursor
       playerctl
       openssl
+      mpv
+      libnotify
     ])
     ++ (with unstable; [
       ags
