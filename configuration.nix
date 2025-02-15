@@ -5,6 +5,7 @@
   config,
   pkgs,
   unstable,
+  lib,
   ...
 }: {
   imports = [
@@ -71,7 +72,6 @@
       swww
       hyprcursor
       rose-pine-cursor
-      pulseaudioFull
     ])
     ++ (with unstable; [
       ]);
@@ -128,7 +128,7 @@
   users.users.nickv = {
     isNormalUser = true;
     description = "Nick Valkenburg";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "audio"];
     packages = with pkgs; [];
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -138,7 +138,11 @@
     max-cache-ttl = 1;
   };
 
-  #  hardware.pulseaudioFull.enable = true;
+  #  hardware.pulseaudio.enable = lib.mkOverride 1 true;
+  #  hardware.pulseaudio.support32Bit = true;
+  #  nixpkgs.config.pulseaudio = true;
+  #  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+
   services.xserver.enable = true;
   services.displayManager.ly.enable = true;
   # services.displayManager.ly.autoNumlock = true;
