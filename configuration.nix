@@ -71,6 +71,7 @@
       swww
       hyprcursor
       rose-pine-cursor
+      playerctl
     ])
     ++ (with unstable; [
       ags
