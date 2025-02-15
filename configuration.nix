@@ -71,6 +71,7 @@
       swww
       hyprcursor
       rose-pine-cursor
+      pulseaudioFull
     ])
     ++ (with unstable; [
       ]);
@@ -137,7 +138,7 @@
     max-cache-ttl = 1;
   };
 
-  # hardware.pulseaudio.enable = true;
+  #  hardware.pulseaudioFull.enable = true;
   services.xserver.enable = true;
   services.displayManager.ly.enable = true;
   # services.displayManager.ly.autoNumlock = true;
