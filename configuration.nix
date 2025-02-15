@@ -72,6 +72,7 @@
       hyprcursor
       rose-pine-cursor
       playerctl
+      openssl
     ])
     ++ (with unstable; [
       ags
