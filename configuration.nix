@@ -75,6 +75,7 @@
       openssl
       mpv
       libnotify
+      pavucontrol
     ])
     ++ (with unstable; [
       ags
