@@ -76,6 +76,7 @@
       mpv
       libnotify
       pavucontrol
+      pwgen
     ])
     ++ (with unstable; [
       ags
