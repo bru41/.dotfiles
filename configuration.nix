@@ -77,6 +77,7 @@
       libnotify
       pavucontrol
       pwgen
+      qgroundcontrol
     ])
     ++ (with unstable; [
       ags
