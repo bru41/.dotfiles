@@ -79,6 +79,7 @@
       pwgen
       qgroundcontrol
       grim
+      flameshot
     ])
     ++ (with unstable; [
       ags
