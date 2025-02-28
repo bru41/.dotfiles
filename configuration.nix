@@ -78,7 +78,7 @@
       pavucontrol
       pwgen
       qgroundcontrol
-      kdePackages.spectacle
+      grim
     ])
     ++ (with unstable; [
       ags
