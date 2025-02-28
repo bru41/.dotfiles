@@ -78,6 +78,7 @@
       pavucontrol
       pwgen
       qgroundcontrol
+      flameshot
     ])
     ++ (with unstable; [
       ags
