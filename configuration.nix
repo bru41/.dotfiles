@@ -78,7 +78,7 @@
       pavucontrol
       pwgen
       qgroundcontrol
-      flameshot
+      kdePackages.spectacle
     ])
     ++ (with unstable; [
       ags
