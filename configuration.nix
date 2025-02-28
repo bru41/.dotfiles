@@ -80,6 +80,7 @@
       qgroundcontrol
       grim
       flameshot
+      swappy
     ])
     ++ (with unstable; [
       ags
