@@ -86,6 +86,7 @@
       python312Packages.torch
       python312Packages.torchvision
       python312Packages.torchaudio
+      python312Packages.ipykernel
     ])
     ++ (with unstable; [
       ags
