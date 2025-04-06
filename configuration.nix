@@ -36,7 +36,6 @@
       ncurses
       gparted
       smartmontools
-      python39
       rustup
       alejandra
       obsidian
@@ -81,6 +80,12 @@
       grim
       flameshot
       swappy
+      python312
+      python312Packages.pip
+      python312Packages.pycuda
+      python312Packages.torch
+      python312Packages.torchvision
+      python312Packages.torchaudio
     ])
     ++ (with unstable; [
       ags
@@ -111,6 +116,7 @@
     ++ (with unstable; [
       ]);
   nixpkgs.config.allowUnfree = true;
+  nix.settings.substituters = ["https://cuda-maintainers.cachix.org"];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
 
