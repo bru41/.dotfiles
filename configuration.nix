@@ -85,7 +85,7 @@
       python312Packages.torchvision
       python312Packages.torchaudio
       python312Packages.ipykernel
-      python312Packages.yamllint
+      pkgs.python312Packages.stdlibs
     ])
     ++ (with unstable; [
       ags
