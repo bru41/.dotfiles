@@ -23,7 +23,6 @@
       firefox
       lynx
       kitty
-
       thunderbird
       discord
       mangohud
@@ -46,7 +45,6 @@
       nerdfetch
       zip
       unzip
-      nodejs_23
       vimPlugins.rustaceanvim
       nixos-grub2-theme
       minicom
@@ -66,7 +64,6 @@
       xfce.thunar
       procps
       terminus-nerdfont
-      nerdfonts
       swww
       hyprcursor
       rose-pine-cursor
@@ -112,7 +109,6 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
-      nerdfonts
       font-awesome
     ])
     ++ (with unstable; [
