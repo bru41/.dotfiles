@@ -61,6 +61,7 @@
       cava
       papers
       vlc
+      nerd-fonts.noto
       xfce.thunar
       procps
       terminus-nerdfont
