@@ -62,6 +62,7 @@
       papers
       vlc
       nerd-fonts.noto
+      nerd-fonts.space-mono
       xfce.thunar
       procps
       terminus-nerdfont
