@@ -79,6 +79,7 @@
       flameshot
       swappy
       micromamba
+      cudaPackages.cudatoolkit
       python312
       python312Packages.pip
       python312Packages.pycuda
