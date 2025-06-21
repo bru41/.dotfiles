@@ -77,6 +77,8 @@
       pwgen
       qgroundcontrol
       grim
+      eduvpn-client
+
       flameshot
       qbittorrent
       swappy
