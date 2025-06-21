@@ -78,6 +78,7 @@
       qgroundcontrol
       grim
       flameshot
+      qbittorrent
       swappy
       micromamba
       cudaPackages.cudatoolkit

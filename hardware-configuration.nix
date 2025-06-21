@@ -22,11 +22,6 @@
     fsType = "ext4";
   };
 
-  fileSystems."/home/backup" = {
-    device = "/dev/disk/by-uuid/C4F3-424B";
-    fsType = "vfat";
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/1070-CBF3";
     fsType = "vfat";
